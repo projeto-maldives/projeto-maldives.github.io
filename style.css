@@ -1,49 +1,72 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
-.container{
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
 
-.mask{
-  width: 100%;
-  height: 100%;
-  background-image: url("maldives.jpg");
-  background-position: center;
-  background-size: cover;
-  -webkit-mask-image: url(maldives.svg);
-  mask-image: url(maldives.svg);
-  mask-repeat: no-repeat;
-  mask-size: 90vw;
-  mask-position: center;
-}
-
-.content{
-  color: white;
-  position: absolute;
-  z-index: 20;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  h2{
-    font-size: 12vw;
-  }
-}
-
-@media screen and (max-width: 767px){
-  .content{
-    top: 15%;
-    left: 20px;
-    transform: translate(0, 0);
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
     
-    h2{
-      font-size: 18vw;
+    .mask {
+        width: 100%;
+        height: 100%;
+        background-image: url('maldives.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        -webkit-mask-image: url('maldives.svg');
+        mask-image: url('maldives.svg');
+        mask-repeat: no-repeat;
+        mask-size: 90vw;
+        mask-position: center;
     }
-  }
+
+    main {
+        position: absolute;
+        top: 7%;
+        left: 5%;
+        color: white;
+        cursor: default;
+        
+        h1 {
+            font-size: clamp(70px, 10vw, 180px);
+        }
+
+        p {
+            width: 40%;
+            margin-top: -8px;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .hero {
+        main {
+            p {
+                width: 50%;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .hero {
+        main {
+            p {
+                width: 70%;
+            }
+        }
+    }
 }
