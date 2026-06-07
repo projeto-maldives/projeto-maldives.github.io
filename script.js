@@ -1,39 +1,32 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let valorMaskSize = '2800vw';
-let valorStartTxt = '30% top';
+let valorMaskSize = "3000vw"
 
-if (window.innerWidth < 1300) {
-    valorMaskSize = '4200vw';
-}
-
-if (window.innerWidth < 850) {
-    valorStartTxt = '300% top';
+if(window.innerWidth < 1000){
+    valorMaskSize = "4000vw"
 }
 
 
-gsap.to('.mask', {
+gsap.to(".mask", {
     maskSize: valorMaskSize,
-    maskPosition: '53% center',
-
+    maskPosition:"53% center",
     scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom 20%',
-        scrub: 2,
-        pin: true
+        trigger: ".container",
+        pin: true,
+        start: "top top",
+        end: "bottom 20%",
+        scrub: 2
     }
-});
+})
 
-gsap.from('.txtMagico', {
+
+gsap.from(".content", {
     opacity: 0,
-    y: 20,
-    stagger: .3,
-
     scrollTrigger: {
-        trigger: '.txtMagico',
-        start: valorStartTxt,
-        end: '+=350 top',
-        scrub: 1
+        trigger: ".content",
+        start: "top top",
+        end: "bottom 20%",
+        scrub: 2,
+        markers: true
     }
-});
+})
